@@ -163,9 +163,16 @@ c) Si se cambia el modelo del ratón, por ejemplo, ahora queremos que se registr
 
 -- 6A) Para construir una nueva hierba simplemente habría que hacerla, sin modificar ninguna función. Y para construir un medicamento, en caso de que ya exista
 -- y lo que se quiere hacer es agregarle esta hierba a ese medicamento, simplemente se agrega la hierba a la lista. En caso de que se quiera hacer uno
--- completamente nuevo, solamente habría que hacerlo, sin modificar otras funciones.
+-- completamente nuevo, solamente habría que hacerlo, sin modificar otras funciones. 
 
--- 6B) Esto se debe al enfoque Top-Down y a la división en subtareas.
+-- 6B) 
+{- - Primero hablaría sobre el modelado, diciendo que las hierbas están modeladas como funciones de tipo Raton -> Raton, lo que permite agregar cualquier hierba 
+simplemente definiendo una nueva función, lo que no afecta al resto. Los medicamentos son una lista de esas hierbas, por lo que también están definidos independientes 
+uno de los otros. (Creo que esta es la respuesta que más concreta a la pregunta del parcial, la forma del modelado, especialmente con funciones.)
+
+- Pero para mí el concepto clave que te deja hacer todo esto es el orden superior, o sea el poder definir el algoritmo de administrarMedicamento independiente de los 
+medicamentos y hierbas que existan en el sistema. Es en cómo se usan esos modelos donde se saca jugo a lo que dice arriba, lo que tiene sentido, ya que definir un modelo 
+independiente y extensible pero que después no resuelva el problema no tiene sentido, siempre hay que tener ese foco. -}
 
 -- 6C) Habría que modificar aquellas funciones en las que se utiliza un valor del peso en kilos como condición, por ejemplo en alcachofa la condicion es que
 -- pese menos de 2 KILOS para hacer algo. En ese caso habría que modificarlo por su equivalente en libras y nada más. El resto de funciones que modifican el 
