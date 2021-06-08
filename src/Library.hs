@@ -74,7 +74,10 @@ porcentajeDelPeso :: Number -> Raton -> Number
 porcentajeDelPeso porCiento raton = (porCiento/100) * (peso raton)
 ----------------------------------------------------------------------------------------------------------------------------------------------
 hierbaZort :: Hierba
-hierbaZort = quedarConCeroAnios . perderTodasLasEnfermedades
+hierbaZort = quedarConCeroAnios . perderTodasLasEnfermedades . (cambiarNombreRaton "pinky")
+
+cambiarNombreRaton :: String -> Raton -> Raton
+cambiarNombreRaton nuevoNombre raton = raton {nombre = nuevoNombre}
 
 perderTodasLasEnfermedades :: Raton -> Raton
 perderTodasLasEnfermedades raton = raton {enfermedades = []}
